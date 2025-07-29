@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className='bg-black bg-gradient-to-r py-12 text-white'>
       <div className='mx-auto max-w-6xl px-4 sm:px-6 lg:px-8'>
-        <div className='grid gap-8 md:grid-cols-3'>
+        <div className='grid gap-10 md:grid-cols-3'>
           <div>
             <Logo
               variant='light'
@@ -12,7 +12,8 @@ const Footer = () => {
               className='mb-4'
             />
             <p className='text-gray-300'>
-              TypeScript template with modern stack and production-ready setup
+              Next.js based template with modern stack and production-ready
+              setup
             </p>
           </div>
 
@@ -77,11 +78,9 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className='mt-8 border-t border-gray-700 pt-8 text-center text-gray-400'>
-          <p>
-            &copy; 2025 Next.js Stack Template. Built for developers, by
-            developers.
-          </p>
+        <div className='mt-10 border-t border-gray-700 pt-8 text-center text-gray-400'>
+          <p className='mb-1'>&copy; 2025 App Template</p>
+          <p>built for developers, by developers.</p>
         </div>
       </div>
     </footer>
