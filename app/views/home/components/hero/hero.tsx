@@ -32,7 +32,7 @@ const Hero = () => {
   }, [])
 
   return (
-    <section className='bg-gradient-to-b from-white to-gray-100 px-4 py-20 sm:px-6 lg:px-8'>
+    <section className='bg-gradient-to-b from-white to-gray-100 px-4 py-20 sm:px-8 lg:px-10'>
       <div className='mx-auto max-w-4xl text-center'>
         <h1 className='mb-6 text-4xl font-bold text-gray-900 sm:text-5xl md:text-6xl'>
           App Template
