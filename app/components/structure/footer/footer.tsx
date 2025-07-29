@@ -7,7 +7,8 @@ const Footer = () => {
         <div className='grid gap-8 md:grid-cols-3'>
           <div>
             <Logo
-              variant='footer'
+              variant='light'
+              text='App Template'
               className='mb-4'
             />
             <p className='text-gray-300'>

@@ -1,25 +1,9 @@
-export interface ILogoProps {
-  variant?: 'header' | 'footer'
-  size?: 'sm' | 'md' | 'lg'
+import { type VariantProps } from 'class-variance-authority'
+
+import { logoVariants } from './logo.variant'
+
+export interface ILogoProps extends VariantProps<typeof logoVariants> {
+  variant: 'dark' | 'light'
+  text: string
   className?: string
-}
-
-export interface ILogoSizeClasses {
-  icon: string
-  text: string
-  iconText: string
-}
-
-export interface ILogoVariantClasses {
-  iconBg: string
-  iconText: string
-  text: string
-}
-
-export type TLogoSizes = {
-  [K in NonNullable<ILogoProps['size']>]: ILogoSizeClasses
-}
-
-export type TLogoVariants = {
-  [K in NonNullable<ILogoProps['variant']>]: ILogoVariantClasses
 }
