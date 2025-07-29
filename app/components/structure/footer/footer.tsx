@@ -1,15 +1,15 @@
+import Logo from '@/app/components/ui/logo'
+
 const Footer = () => {
   return (
     <footer className='bg-gradient-to-r from-gray-900 to-gray-800 py-12 text-white'>
       <div className='mx-auto max-w-6xl px-4 sm:px-6 lg:px-8'>
         <div className='grid gap-8 md:grid-cols-3'>
           <div>
-            <div className='mb-4 flex items-center'>
-              <div className='mr-3 flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-r from-white to-gray-200'>
-                <span className='text-sm font-bold text-gray-900'>TS</span>
-              </div>
-              <span className='text-xl font-bold'>Next.js Stack</span>
-            </div>
+            <Logo
+              variant='footer'
+              className='mb-4'
+            />
             <p className='text-gray-300'>
               TypeScript template with modern stack and production-ready setup
             </p>

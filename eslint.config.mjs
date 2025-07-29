@@ -67,6 +67,7 @@ const eslintConfig = [
         },
       ],
       'simple-import-sort/exports': 'error',
+      'react/no-unescaped-entities': 'off',
     },
   },
 ]

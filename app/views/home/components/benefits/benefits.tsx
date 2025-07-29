@@ -17,10 +17,7 @@ const Benefits = () => {
         <div className='grid gap-8 md:grid-cols-2'>
           <div className='flex items-start space-x-4 rounded-xl border border-gray-100 bg-gradient-to-r from-gray-50 to-white p-6 transition-all duration-300 hover:shadow-lg'>
             <div className='flex-shrink-0'>
-              <div
-                className='flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-gray-900 to-gray-700 text-2xl'
-                style={{ filter: 'grayscale(100%)' }}
-              >
+              <div className='flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-gray-900 to-gray-700 text-2xl grayscale'>
                 ⚡
               </div>
             </div>
@@ -37,10 +34,7 @@ const Benefits = () => {
 
           <div className='flex items-start space-x-4 rounded-xl border border-gray-100 bg-gradient-to-r from-gray-50 to-white p-6 transition-all duration-300 hover:shadow-lg'>
             <div className='flex-shrink-0'>
-              <div
-                className='flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-gray-900 to-gray-700 text-2xl'
-                style={{ filter: 'grayscale(100%)' }}
-              >
+              <div className='flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-gray-900 to-gray-700 text-2xl grayscale'>
                 🛡️
               </div>
             </div>
@@ -57,10 +51,7 @@ const Benefits = () => {
 
           <div className='flex items-start space-x-4 rounded-xl border border-gray-100 bg-gradient-to-r from-gray-50 to-white p-6 transition-all duration-300 hover:shadow-lg'>
             <div className='flex-shrink-0'>
-              <div
-                className='flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-gray-900 to-gray-700 text-2xl'
-                style={{ filter: 'grayscale(100%)' }}
-              >
+              <div className='flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-gray-900 to-gray-700 text-2xl grayscale'>
                 🤝
               </div>
             </div>
@@ -77,10 +68,7 @@ const Benefits = () => {
 
           <div className='flex items-start space-x-4 rounded-xl border border-gray-100 bg-gradient-to-r from-gray-50 to-white p-6 transition-all duration-300 hover:shadow-lg'>
             <div className='flex-shrink-0'>
-              <div
-                className='flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-gray-900 to-gray-700 text-2xl'
-                style={{ filter: 'grayscale(100%)' }}
-              >
+              <div className='flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-gray-900 to-gray-700 text-2xl grayscale'>
                 📈
               </div>
             </div>

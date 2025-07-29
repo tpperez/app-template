@@ -2,20 +2,16 @@
 
 import { useState } from 'react'
 
+import Logo from '@/app/components/ui/logo'
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   return (
     <header className='sticky top-0 z-50 bg-white/90 shadow-sm backdrop-blur-md'>
       <div className='mx-auto max-w-6xl px-4 sm:px-6 lg:px-8'>
         <div className='flex items-center justify-between py-4'>
-          <div className='flex items-center'>
-            <div className='mr-3 flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-r from-gray-900 to-gray-700'>
-              <span className='text-sm font-bold text-white'>TS</span>
-            </div>
-            <span className='text-xl font-bold text-gray-900'>
-              Next.js Stack
-            </span>
-          </div>
+          <Logo variant='header' />
 
           <nav className='hidden space-x-8 lg:flex'>
             <a

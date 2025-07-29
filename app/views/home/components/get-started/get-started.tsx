@@ -1,4 +1,44 @@
+'use client'
+
+import { useEffect, useMemo, useState } from 'react'
+
 const GetStarted = () => {
+  const [displayedCommands, setDisplayedCommands] = useState<string[]>([])
+  const [currentCommandIndex, setCurrentCommandIndex] = useState(0)
+  const [currentText, setCurrentText] = useState('')
+
+  const commands = useMemo(() => {
+    return ['npm install', 'npm run dev']
+  }, [])
+
+  useEffect(() => {
+    if (currentCommandIndex >= commands.length) return
+
+    const currentCommand = commands[currentCommandIndex]
+
+    if (currentText.length < currentCommand.length) {
+      const timer = setTimeout(() => {
+        setCurrentText(currentCommand.slice(0, currentText.length + 1))
+      }, 50)
+      return () => {
+        return clearTimeout(timer)
+      }
+    } else {
+      const timer = setTimeout(() => {
+        setDisplayedCommands((prev) => {
+          return [...prev, currentCommand]
+        })
+        setCurrentCommandIndex((prev) => {
+          return prev + 1
+        })
+        setCurrentText('')
+      }, 800)
+      return () => {
+        return clearTimeout(timer)
+      }
+    }
+  }, [currentText, currentCommandIndex, commands])
+
   return (
     <section
       id='get-started'
@@ -6,38 +46,40 @@ const GetStarted = () => {
     >
       <div className='mx-auto max-w-4xl text-center'>
         <h2 className='mb-4 text-3xl font-bold text-gray-900 md:text-4xl'>
-          Start with the Complete Stack
+          Start Developing Right Now
         </h2>
         <p className='mb-8 text-lg text-gray-600'>
-          All dependencies configured, types defined and examples included
+          with everything you need to build your application
         </p>
-        <div className='mb-8 rounded-lg bg-gradient-to-r from-gray-900 to-gray-800 p-6 shadow-lg'>
-          <div className='text-left'>
-            <div className='mb-2 text-sm text-gray-400'>
-              # Clone the template
+        <div className='mb-8 overflow-hidden rounded-lg border border-gray-700 bg-black shadow-xl'>
+          <div className='flex items-center gap-2 bg-gray-600 px-4 py-2'>
+            <div className='flex gap-2'>
+              <div className='h-3 w-3 rounded-full bg-red-500'></div>
+              <div className='h-3 w-3 rounded-full bg-yellow-500'></div>
+              <div className='h-3 w-3 rounded-full bg-green-500'></div>
             </div>
-            <div className='font-mono text-white'>
-              git clone https://github.com/user/nextjs-stack-template.git
-            </div>
-            <div className='mb-2 mt-4 text-sm text-gray-400'>
-              # Install dependencies
-            </div>
-            <div className='font-mono text-white'>
-              cd nextjs-stack-template && npm install
-            </div>
-            <div className='mb-2 mt-4 text-sm text-gray-400'>
-              # Start development
-            </div>
-            <div className='font-mono text-white'>npm run dev</div>
           </div>
-        </div>
-        <div className='flex flex-col justify-center gap-4 sm:flex-row'>
-          <button className='transform rounded-lg bg-gradient-to-r from-gray-900 to-gray-700 px-8 py-3 font-medium text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-gray-800 hover:to-gray-600'>
-            Clone Repository
-          </button>
-          <button className='font-medium text-gray-700 transition-colors hover:text-gray-900'>
-            View Documentation →
-          </button>
+
+          <div className='min-h-[60px] p-4 text-left'>
+            <div className='space-y-2 font-mono text-sm'>
+              {displayedCommands.map((command, index) => {
+                return (
+                  <div
+                    key={index}
+                    className='flex items-center'
+                  >
+                    <span className='text-white'>{command}</span>
+                  </div>
+                )
+              })}
+              {currentCommandIndex < commands.length && (
+                <div className='flex items-center'>
+                  <span className='text-white'>{currentText}</span>
+                  <span className='ml-1 animate-pulse text-white'>|</span>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </section>
