@@ -14,13 +14,13 @@ export const logoVariants = cva(
       variant: {
         dark: [
           // icon
-          '[&_[data-slot=logo-icon]]:bg-gradient-to-r [&_[data-slot=logo-icon]]:from-gray-100 [&_[data-slot=logo-icon]]:to-gray-200',
+          '[&_[data-slot=logo-icon]]:bg-gradient-to-r [&_[data-slot=logo-icon]]:from-gray-800 [&_[data-slot=logo-icon]]:to-gray-900',
           // text
           '[&_[data-slot=logo-text]]:text-gray-900',
         ],
         light: [
           // icon
-          '[&_[data-slot=logo-icon]]:bg-gradient-to-r [&_[data-slot=logo-icon]]:from-gray-800 [&_[data-slot=logo-icon]]:to-gray-900',
+          '[&_[data-slot=logo-icon]]:bg-gradient-to-r [&_[data-slot=logo-icon]]:from-gray-100 [&_[data-slot=logo-icon]]:to-gray-200',
           // text
           '[&_[data-slot=logo-text]]:text-white',
         ],
