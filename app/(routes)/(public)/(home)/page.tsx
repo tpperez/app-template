@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 import ViewHome from '@/app/views/home'
 
-import getHomeData from './queries'
+import { MOCK_HOME_DATA } from './page.const'
 
 export const metadata: Metadata = {
   title: 'Home',
@@ -10,14 +10,7 @@ export const metadata: Metadata = {
 }
 
 const PageHome = async () => {
-  const { success, data, error } = await getHomeData()
-
-  if (!success || !data) {
-    console.error('Error fetching page data:', error)
-    return null
-  }
-
-  const { home } = data
+  const { home } = MOCK_HOME_DATA
 
   return <ViewHome data={home} />
 }

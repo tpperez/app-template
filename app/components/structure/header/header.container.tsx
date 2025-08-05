@@ -1,15 +1,8 @@
 import Header from './header'
-import getHeaderData from './queries'
+import { MOCK_HEADER_DATA } from './header.container.const'
 
 const HeaderContainer = async () => {
-  const { success, data, error } = await getHeaderData()
-
-  if (!success || !data) {
-    console.error('Error fetching header data:', error)
-    return null
-  }
-
-  const { header } = data
+  const { header } = MOCK_HEADER_DATA
 
   return <Header data={header} />
 }

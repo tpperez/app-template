@@ -9,7 +9,7 @@ export const middleware = (request: NextRequest) => {
     default-src 'self';
     script-src 'self' 'nonce-${nonce}' 'strict-dynamic';
     style-src 'self' 'unsafe-inline';
-    img-src 'self' blob: data: https://www.datocms-assets.com;
+    img-src 'self' blob: data:;
     font-src 'self' data:;
     connect-src 'self';
     object-src 'none';

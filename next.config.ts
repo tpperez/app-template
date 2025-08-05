@@ -11,16 +11,6 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'www.datocms-assets.com',
-        port: '',
-        pathname: '/**',
-      },
-    ],
-  },
 }
 
 export default process.env.ANALYZE === 'true'

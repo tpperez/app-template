@@ -1,15 +1,8 @@
 import Footer from './footer'
-import getFooterData from './queries'
+import { MOCK_FOOTER_DATA } from './footer.container.const'
 
 const FooterContainer = async () => {
-  const { success, data, error } = await getFooterData()
-
-  if (!success || !data) {
-    console.error('error loading footer data:', error)
-    return null
-  }
-
-  const { footer } = data
+  const { footer } = MOCK_FOOTER_DATA
 
   return <Footer data={footer} />
 }
