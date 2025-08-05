@@ -5,6 +5,7 @@
 ### Prerequisites
 
 - nvm
+- node 22.15.1
 
 ### Setup
 

@@ -1,18 +1,21 @@
-import Benefits from '@/app/views/home/components/benefits'
-import GetStarted from '@/app/views/home/components/get-started'
-import Hero from '@/app/views/home/components/hero'
-import Stack from '@/app/views/home/components/stack'
-import Stats from '@/app/views/home/components/stats'
+import Benefits from './components/benefits'
+import GetStarted from './components/get-started'
+import Hero from './components/hero'
+import Stack from './components/stack'
+import Stats from './components/stats'
+import type { IHomeViewData } from './home.type'
 
-const ViewHome = () => {
+const ViewHome = ({ data }: IHomeViewData) => {
+  const { hero, stats, stack, benefits, getStarted } = data
+
   return (
-    <div className='min-h-screen bg-gradient-to-br from-gray-50 to-white'>
-      <Hero />
-      <Stats />
-      <Stack />
-      <Benefits />
-      <GetStarted />
-    </div>
+    <>
+      <Hero data={hero} />
+      <Stats data={stats} />
+      <Stack data={stack} />
+      <Benefits data={benefits} />
+      <GetStarted data={getStarted} />
+    </>
   )
 }
 

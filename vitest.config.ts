@@ -25,9 +25,13 @@ export default defineConfig({
       exclude: [
         '.docs/',
         '.next/',
+        'coverage/',
+        'node_modules/',
+        'public/',
         '**/*.const.ts',
-        '**/*.{test}.{ts,tsx}',
-        '**/*.{type}.ts',
+        '**/*.test.{ts,tsx}',
+        '**/*.type.ts',
+        '**/*.types.ts',
         '**/*.config.{js,ts,mjs}',
         '**/*.d.ts',
         '**/error.tsx',
@@ -38,9 +42,6 @@ export default defineConfig({
         '**/not-found.tsx',
         '**/page.tsx',
         '**/vitest.setup.ts',
-        'coverage/',
-        'node_modules/',
-        'public/',
       ],
 
       thresholds: {

@@ -36,28 +36,27 @@ describe('HttpProvider', () => {
   })
 
   it('should render children without errors', () => {
-    const testMessage = 'Test child component'
     render(
       <HttpProvider>
-        <div>{testMessage}</div>
+        <div data-testid='test-child'></div>
       </HttpProvider>,
     )
 
-    expect(screen.getByText(testMessage)).toBeInTheDocument()
+    expect(screen.getByTestId('test-child')).toBeInTheDocument()
   })
 
   it('should handle multiple children', () => {
     render(
       <HttpProvider>
-        <div>Child 1</div>
-        <div>Child 2</div>
-        <span>Child 3</span>
+        <div data-testid='child-1'></div>
+        <div data-testid='child-2'></div>
+        <span data-testid='child-3'></span>
       </HttpProvider>,
     )
 
-    expect(screen.getByText('Child 1')).toBeInTheDocument()
-    expect(screen.getByText('Child 2')).toBeInTheDocument()
-    expect(screen.getByText('Child 3')).toBeInTheDocument()
+    expect(screen.getByTestId('child-1')).toBeInTheDocument()
+    expect(screen.getByTestId('child-2')).toBeInTheDocument()
+    expect(screen.getByTestId('child-3')).toBeInTheDocument()
   })
 
   it('should handle empty children', () => {
@@ -75,23 +74,23 @@ describe('HttpProvider', () => {
     expect(container).toBeInTheDocument()
   })
 
-  it('should accept showDevtools prop (even though not implemented)', () => {
+  it('should accept showDevtools prop', () => {
     render(
       <HttpProvider showDevtools={true}>
-        <div>Test with devtools</div>
+        <div data-testid='devtools-child'></div>
       </HttpProvider>,
     )
 
-    expect(screen.getByText('Test with devtools')).toBeInTheDocument()
+    expect(screen.getByTestId('devtools-child')).toBeInTheDocument()
   })
 
   it('should work with complex nested components', () => {
     const NestedComponent = () => {
       return (
         <div>
-          <h1>Title</h1>
-          <p>Description</p>
-          <button>Click me</button>
+          <h1 data-testid='heading'>h1</h1>
+          <p data-testid='paragraph'></p>
+          <button data-testid='button'></button>
         </div>
       )
     }
@@ -102,8 +101,8 @@ describe('HttpProvider', () => {
       </HttpProvider>,
     )
 
-    expect(screen.getByText('Title')).toBeInTheDocument()
-    expect(screen.getByText('Description')).toBeInTheDocument()
-    expect(screen.getByRole('button')).toBeInTheDocument()
+    expect(screen.getByTestId('heading')).toBeInTheDocument()
+    expect(screen.getByTestId('paragraph')).toBeInTheDocument()
+    expect(screen.getByTestId('button')).toBeInTheDocument()
   })
 })

@@ -1,1 +1,2 @@
-export { default } from './footer'
+export { default } from './footer.container'
+export type * from './footer.type'

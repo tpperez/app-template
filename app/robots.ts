@@ -2,8 +2,13 @@ import type { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: [],
-    sitemap: '',
+    rules: [
+      {
+        userAgent: '*',
+        allow: '/',
+      },
+    ],
+    sitemap: `${process.env.BASE_URL}/sitemap.xml`,
   }
 }
 

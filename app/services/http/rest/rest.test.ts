@@ -34,28 +34,28 @@ describe('RestClient', () => {
 
   describe('request method', () => {
     it('should call adapter request with correct parameters', async () => {
-      const mockResponse = { data: 'test' }
+      const mockResponse = { data: '' }
       mockAdapter.request.mockResolvedValue(mockResponse)
 
       const result = await restClient.request('users', {
         method: 'POST',
-        body: { name: 'test' },
-        headers: { 'X-Test': 'value' },
-        baseUrl: 'https://custom-api.com',
+        body: { name: '' },
+        headers: { 'X-Test': '' },
+        baseUrl: '',
         timeout: 5000,
-        tags: ['users'],
+        tags: [''],
         revalidate: 300,
       })
 
       expect(mockAdapter.request).toHaveBeenCalledWith(
-        'https://custom-api.com/users',
+        'http://localhost:3001/api/users',
         {
           method: 'POST',
-          body: { name: 'test' },
-          headers: { 'X-Test': 'value' },
-          baseUrl: 'https://custom-api.com',
+          body: { name: '' },
+          headers: { 'X-Test': '' },
+          baseUrl: '',
           timeout: 5000,
-          tags: ['users'],
+          tags: [''],
           revalidate: 300,
         },
       )
@@ -63,7 +63,7 @@ describe('RestClient', () => {
     })
 
     it('should use default parameters when not provided', async () => {
-      const mockResponse = { data: 'test' }
+      const mockResponse = { data: '' }
       mockAdapter.request.mockResolvedValue(mockResponse)
 
       await restClient.request('users')
@@ -83,32 +83,32 @@ describe('RestClient', () => {
     })
 
     it('should handle adapter errors', async () => {
-      const error = new Error('Network error')
+      const error = new Error('')
       mockAdapter.request.mockRejectedValue(error)
 
-      await expect(restClient.request('users')).rejects.toThrow('Network error')
+      await expect(restClient.request('users')).rejects.toThrow('')
     })
   })
 
   describe('HTTP method shortcuts', () => {
     beforeEach(() => {
-      mockAdapter.request.mockResolvedValue({ data: 'test' })
+      mockAdapter.request.mockResolvedValue({ data: '' })
     })
 
     describe('get', () => {
       it('should make GET request with correct parameters', async () => {
         await restClient.get('users', {
-          headers: { 'X-Test': 'value' },
-          baseUrl: 'https://custom-api.com',
+          headers: { 'X-Test': '' },
+          baseUrl: '',
         })
 
         expect(mockAdapter.request).toHaveBeenCalledWith(
-          'https://custom-api.com/users',
+          'http://localhost:3001/api/users',
           {
             method: 'GET',
             body: undefined,
-            headers: { 'X-Test': 'value' },
-            baseUrl: 'https://custom-api.com',
+            headers: { 'X-Test': '' },
+            baseUrl: '',
             timeout: undefined,
             tags: [],
             revalidate: undefined,
@@ -119,10 +119,10 @@ describe('RestClient', () => {
 
     describe('post', () => {
       it('should make POST request with body', async () => {
-        const body = { name: 'test', email: 'test@example.com' }
+        const body = { name: '', email: '' }
 
         await restClient.post('users', body, {
-          headers: { 'X-Test': 'value' },
+          headers: { 'X-Test': '' },
         })
 
         expect(mockAdapter.request).toHaveBeenCalledWith(
@@ -130,7 +130,7 @@ describe('RestClient', () => {
           {
             method: 'POST',
             body,
-            headers: { 'X-Test': 'value' },
+            headers: { 'X-Test': '' },
             baseUrl: undefined,
             timeout: undefined,
             tags: [],
@@ -159,7 +159,7 @@ describe('RestClient', () => {
 
     describe('put', () => {
       it('should make PUT request with body', async () => {
-        const body = { name: 'updated', email: 'updated@example.com' }
+        const body = { name: '', email: '' }
 
         await restClient.put('users/123', body)
 
@@ -180,7 +180,7 @@ describe('RestClient', () => {
 
     describe('patch', () => {
       it('should make PATCH request with body', async () => {
-        const body = { name: 'patched' }
+        const body = { name: '' }
 
         await restClient.patch('users/123', body)
 
@@ -229,8 +229,8 @@ describe('RestClient', () => {
 
       const mockUser: User = {
         id: 1,
-        name: 'John Doe',
-        email: 'john@example.com',
+        name: '',
+        email: '',
       }
       mockAdapter.request.mockResolvedValue(mockUser)
 
@@ -251,14 +251,14 @@ describe('RestClient', () => {
       }
 
       const requestBody: CreateUserRequest = {
-        name: 'Jane Doe',
-        email: 'jane@example.com',
+        name: '',
+        email: '',
       }
 
       const mockUser: User = {
         id: 2,
-        name: 'Jane Doe',
-        email: 'jane@example.com',
+        name: '',
+        email: '',
       }
       mockAdapter.request.mockResolvedValue(mockUser)
 

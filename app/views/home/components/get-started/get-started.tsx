@@ -1,24 +1,26 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 
-const GetStarted = () => {
-  const [displayedCommands, setDisplayedCommands] = useState<string[]>([])
+import { IGetStartedCommand, IGetStartedData } from './get-started.type'
+
+const GetStarted = ({ data }: IGetStartedData) => {
+  const { title, description, commands } = data
+
+  const [displayedCommands, setDisplayedCommands] = useState<
+    IGetStartedCommand[]
+  >([])
   const [currentCommandIndex, setCurrentCommandIndex] = useState(0)
   const [currentText, setCurrentText] = useState('')
-
-  const commands = useMemo(() => {
-    return ['npm install', 'npm run dev']
-  }, [])
 
   useEffect(() => {
     if (currentCommandIndex >= commands.length) return
 
     const currentCommand = commands[currentCommandIndex]
 
-    if (currentText.length < currentCommand.length) {
+    if (currentText.length < currentCommand.command.length) {
       const timer = setTimeout(() => {
-        setCurrentText(currentCommand.slice(0, currentText.length + 1))
+        setCurrentText(currentCommand.command.slice(0, currentText.length + 1))
       }, 50)
       return () => {
         return clearTimeout(timer)
@@ -46,11 +48,9 @@ const GetStarted = () => {
     >
       <div className='mx-auto max-w-4xl text-center'>
         <h2 className='mb-4 text-3xl font-bold text-gray-900 md:text-4xl'>
-          Start Developing Right Now
+          {title}
         </h2>
-        <p className='mb-8 text-lg text-gray-600'>
-          with everything you need to build your application
-        </p>
+        <p className='mb-8 text-lg text-gray-600'>{description}</p>
         <div className='mb-8 overflow-hidden rounded-lg border border-gray-700 bg-black shadow-xl'>
           <div className='flex items-center gap-2 bg-gray-600 px-4 py-2'>
             <div className='flex gap-2'>
@@ -62,18 +62,21 @@ const GetStarted = () => {
 
           <div className='min-h-[60px] p-4 text-left'>
             <div className='space-y-2 font-mono text-sm'>
-              {displayedCommands.map((command, index) => {
+              {displayedCommands.map((command: IGetStartedCommand) => {
                 return (
                   <div
-                    key={index}
+                    key={command.id}
                     className='flex items-center'
                   >
-                    <span className='text-white'>{command}</span>
+                    <span className='text-white'>{command.command}</span>
                   </div>
                 )
               })}
               {currentCommandIndex < commands.length && (
-                <div className='flex items-center'>
+                <div
+                  className='flex items-center'
+                  key={currentCommandIndex}
+                >
                   <span className='text-white'>{currentText}</span>
                   <span className='ml-1 animate-pulse text-white'>|</span>
                 </div>

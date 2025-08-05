@@ -1,19 +1,15 @@
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 
+import { SITE_NAME } from '@/app/constants/config'
+
 import Logo from './logo'
 
 describe('Logo Component', () => {
   it('should apply base classes correctly', () => {
-    const { container } = render(
-      <Logo
-        variant='dark'
-        text='Test Logo'
-      />,
-    )
+    const { container } = render(<Logo variant='dark' />)
     const logoElement = container.firstChild
 
-    // check base classes
     expect(logoElement).toHaveClass(
       'inline-flex',
       'shrink-0',
@@ -27,7 +23,6 @@ describe('Logo Component', () => {
     const { container } = render(
       <Logo
         variant='dark'
-        text='Custom Logo'
         className={customClass}
       />,
     )
@@ -37,20 +32,12 @@ describe('Logo Component', () => {
   })
 
   it('should render with both variant options', () => {
-    const { rerender } = render(
-      <Logo
-        variant='dark'
-        text='Test'
-      />,
-    )
-    expect(screen.getByText('Test')).toBeInTheDocument()
+    const { rerender } = render(<Logo variant='dark' />)
+    const darkLogo = screen.getByText(SITE_NAME)
+    expect(darkLogo).toBeInTheDocument()
 
-    rerender(
-      <Logo
-        variant='light'
-        text='Test'
-      />,
-    )
-    expect(screen.getByText('Test')).toBeInTheDocument()
+    rerender(<Logo variant='light' />)
+    const lightLogo = screen.getByText(SITE_NAME)
+    expect(lightLogo).toBeInTheDocument()
   })
 })
