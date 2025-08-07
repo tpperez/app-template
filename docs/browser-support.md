@@ -8,24 +8,17 @@ Browser compatibility requirements and testing strategy for the template.
 
 - [Browser Support Policy](#browser-support-policy)
 - [Supported Browsers](#supported-browsers)
+- [WebView Support](#webview-support)
 - [Unsupported Browsers](#unsupported-browsers)
 - [Technical Requirements](#technical-requirements)
-- [Default System Browsers](#default-system-browsers)
-- [Configuration & Testing](#configuration--testing)
-- [Update Policy](#update-policy)
-- [Validation Resources](#validation-resources)
+- [Configuration](#configuration)
 - [Related Documentation](#related-documentation)
 
 ---
 
 ## Browser Support Policy
 
-The template supports **latest stable versions** of major browsers, focusing on modern web standards and performance optimization.
-
-### Coverage Metrics
-
-- **Global Coverage:** 99.8%+ users across developed and emerging markets
-- **Enterprise Compatibility:** 100% with current enterprise environments
+The template supports **last 2 stable versions** of major browsers, focusing on modern web standards and performance optimization.
 
 ---
 
@@ -33,53 +26,70 @@ The template supports **latest stable versions** of major browsers, focusing on 
 
 ### Desktop Browsers
 
-**Chromium-Based (v8 + blink)**
-
-- google chrome (latest stable) → [Releases](https://chromereleases.googleblog.com/)
-- microsoft edge (latest stable) → [Release Notes](https://docs.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel)
-- brave browser (latest stable) → [Releases](https://github.com/brave/brave-browser/releases)
-- opera (latest stable) → [Changelog](https://blogs.opera.com/desktop/)
-
-**Mozilla-Based (spidermonkey + gecko)**
-
-- firefox (latest stable) → [Releases](https://www.mozilla.org/en-US/firefox/releases/)
-- firefox esr (latest stable) → [ESR Releases](https://www.mozilla.org/en-US/firefox/enterprise/)
-
-**WebKit-Based (javascriptcore + webkit)**
-
-- safari (latest stable - macos only) → [Release Notes](https://developer.apple.com/documentation/safari-release-notes)
+- **Chrome** (last 2 stable versions)
+- **Firefox** (last 2 stable versions)
+- **Safari** (last 2 stable versions)
+- **Edge** (last 2 stable versions)
 
 ### Mobile Browsers
 
-**iOS/iPadOS (webkit required)**
+- **Chrome Android** (last 2 stable versions)
+- **Firefox Android** (last 2 stable versions)
+- **Samsung Internet** (last 2 stable versions)
+- **Safari iOS** (last 2 stable versions)
 
-- safari ios/ipados (latest stable)
-- chrome ios (latest stable)\*
-- firefox ios (latest stable)\*
-- edge ios (latest stable)\*
+---
 
-\*all ios browsers use webkit per [Apple platform requirements](https://developer.apple.com/app-store/review/guidelines/#software-requirements)
+## WebView Support
 
-**Android**
+The application works correctly within native app webviews. WebView support uses more conservative version requirements than standalone browsers:
 
-- chrome android (latest stable) → [Mobile Releases](https://chromereleases.googleblog.com/)
-- samsung internet (latest stable) → [Features](https://developer.samsung.com/internet)
-- firefox android (latest stable) → [Mobile Releases](https://www.mozilla.org/en-US/firefox/android/)
+### Android WebView
+
+- **Android System WebView** (Android 8.0+)
+- **Apps using WebView component** - compatible with Chrome engine
+- **Hybrid apps** - Cordova, Ionic, React Native WebView
+
+### iOS WKWebView
+
+- **WKWebView component** (iOS 15.5+)
+- **Apps using WKWebView** - compatible with Safari engine
+- **Hybrid apps** - Cordova, Ionic, React Native WebView
+
+### WebView Testing
+
+**Android WebView Debug:**
+
+1. Enable "Developer options" on device
+2. Enable "USB debugging for webviews"
+3. Use Chrome DevTools for debugging
+
+**iOS WKWebView Debug:**
+
+1. Enable "Web Inspector" in Safari settings
+2. Connect device to Mac
+3. Use Safari DevTools for debugging
+
+### WebView Version Strategy
+
+WebView support is more conservative than standalone browsers because:
+
+- Apps may not update webview components immediately
+- Corporate devices often run older OS versions
+- WebViews don't auto-update like standalone browsers
+
+**Android 8.0+** ensures compatibility with apps built 3-4 years ago
+**iOS 15.5+** covers most current enterprise and consumer deployments
+
+Learn more: [Android WebView](https://developer.android.com/guide/webapps/webview) | [iOS WKWebView](https://developer.apple.com/documentation/webkit/wkwebview)
 
 ---
 
 ## Unsupported Browsers
 
-### Legacy Browsers
-
-- **Internet Explorer** (all versions) → [Lifecycle ended](https://docs.microsoft.com/en-us/lifecycle/announcements/internet-explorer-11-end-of-support)
-- **Edge Legacy** (non-chromium) → [Retirement notice](https://techcommunity.microsoft.com/t5/microsoft-365-blog/microsoft-365-apps-say-farewell-to-internet-explorer-11-and/ba-p/1591666)
-
-### Outdated Versions
-
-- browsers 2+ major releases behind current stable
-- discontinued browsers without security updates
-- experimental/beta versions for production use
+- **Internet Explorer** (all versions)
+- **Edge Legacy** (non-Chromium versions)
+- **Browsers 3+ major versions behind** current stable releases
 
 ---
 
@@ -87,119 +97,47 @@ The template supports **latest stable versions** of major browsers, focusing on 
 
 ### Modern Web Standards
 
-- **ES2021+** support → [Compatibility Table](https://kangax.github.io/compat-table/es2016plus/)
-- **CSS Grid & Flexbox** → [Grid Support](https://caniuse.com/css-grid)
-- **CSS Custom Properties** → [Variables Support](https://caniuse.com/css-variables)
-- **ES Modules** → [Module Support](https://caniuse.com/es6-module)
+- **ES2018+** support (with polyfills for older webviews)
+- **CSS Grid & Flexbox** (with fallbacks for older webviews)
+- **CSS Custom Properties**
+- **ES Modules** (with transpilation fallback)
 
 ### JavaScript APIs
 
-- **Fetch API** → [Support](https://caniuse.com/fetch)
-- **Promise** native support → [Compatibility](https://caniuse.com/promises)
-- **Async/await** → [Support](https://caniuse.com/async-functions)
-- **IntersectionObserver** → [Support](https://caniuse.com/intersectionobserver)
+- **Fetch API**
+- **Promise** native support
+- **Async/await**
+- **IntersectionObserver** (with polyfill for older webviews)
 
-### Feature Detection Strategy
+### WebView Compatibility
 
-Progressive enhancement with feature detection rather than browser detection. Modern browsers provide comprehensive API support without polyfills.
-
-Learn more: [Can I Use](https://caniuse.com/) | [Web Standards](https://web.dev/)
+The application uses progressive enhancement and automatic polyfills to ensure compatibility with older webview versions (Android 8.0+ and iOS 15.5+).
 
 ---
 
-## Default System Browsers
+## Configuration
 
-| Operating System | Default Browser | Engine         | Market Share Reference                                                                 |
-| ---------------- | --------------- | -------------- | -------------------------------------------------------------------------------------- |
-| windows 11       | microsoft edge  | chromium       | [Desktop Stats](https://gs.statcounter.com/os-market-share/desktop/worldwide)          |
-| macos            | safari          | webkit         | [Browser Stats](https://gs.statcounter.com/browser-market-share/desktop/worldwide)     |
-| ios/ipados       | safari          | webkit         | [Mobile Stats](https://gs.statcounter.com/browser-market-share/mobile/worldwide)       |
-| android          | chrome          | chromium       | [Android Stats](https://gs.statcounter.com/browser-market-share/mobile/worldwide)      |
-| linux            | firefox/chrome  | gecko/chromium | [Linux Preferences](https://gs.statcounter.com/browser-market-share/desktop/worldwide) |
+### Browserslist Setup
 
----
-
-## Configuration & Testing
-
-### Browserslist Configuration
-
-**Configuration Location:** `package.json` or `.browserslistrc`
+The following configuration ensures proper browser support in the generated build:
 
 ```json
 {
   "browserslist": [
-    "last 1 Chrome versions",
-    "last 1 Firefox versions",
-    "last 1 Safari versions",
-    "last 1 Edge versions"
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions",
+    "last 2 Edge versions",
+    "last 2 ChromeAndroid versions",
+    "last 2 FirefoxAndroid versions",
+    "last 2 Samsung versions",
+    "iOS >= 15.5",
+    "Android >= 8.0"
   ]
 }
 ```
 
-### Build Tool Integration
-
-- **TypeScript** - es2021+ target compilation
-- **PostCSS** - autoprefixer settings for supported browsers
-- **Next.js** - browser compatibility configuration
-- **Tailwind CSS** - browser support alignment
-
-### Testing Strategy ✅
-
-**Development Testing:**
-
-- primary development in chrome/firefox latest
-- safari testing for webkit compatibility
-- mobile testing in ios safari and chrome android
-- edge testing for chromium consistency
-
-**Quality Assurance:**
-
-- component testing across browser matrix
-- feature detection validation
-- performance testing across engines
-
-Learn more: [Browserslist](https://github.com/browserslist/browserslist) | [Autoprefixer](https://github.com/postcss/autoprefixer)
-
----
-
-## Update Policy
-
-Browser support is reviewed and updated:
-
-- **Quarterly** - major version changes and market analysis
-- **Monthly** - security updates and patches
-- **As Needed** - significant releases or vulnerabilities
-- **Annually** - comprehensive support matrix review
-
-### Update Process
-
-1. monitor browser releases and security advisories
-2. analyze user analytics and market share
-3. evaluate api support capabilities
-4. update build tool configurations
-5. test compatibility with updated matrix
-6. document and communicate changes
-
----
-
-## Validation Resources
-
-### Browser Testing Tools
-
-- **[BrowserStack](https://www.browserstack.com/)** - cross-browser testing platform
-- **[Can I Use](https://caniuse.com/)** - feature compatibility data
-- **[Web.dev](https://web.dev/)** - modern web development guides
-
-### Development References
-
-- **[Chrome Status](https://chromestatus.com/)** - chrome platform development roadmap
-- **[Firefox Release Calendar](https://wiki.mozilla.org/Release_Management/Calendar)** - firefox release schedule
-- **[Safari Technology Preview](https://developer.apple.com/safari/technology-preview/)** - upcoming safari features
-
-### User Education
-
-- **[Browse Happy](https://browsehappy.com/)** - modern browser benefits
-- **[What Browser](https://whatbrowser.org/)** - browser upgrade resources
+This configuration enables automatic CSS prefixing and JavaScript transpilation for the specified browser versions.
 
 ---
 
@@ -210,7 +148,3 @@ Browser support is reviewed and updated:
 - **[Architecture](architecture.md)** - project structure and patterns
 - **[HTTP Services](http-services.md)** - api compatibility considerations
 - **[Development](development.md)** - cross-browser testing approach
-
----
-
-_This browser support matrix ensures optimal performance while maintaining broad accessibility. For implementation details, review the [Architecture](architecture.md) or explore [HTTP Services](http-services.md) for API compatibility._
