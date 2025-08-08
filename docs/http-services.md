@@ -298,4 +298,14 @@ Learn more: [Vitest](https://vitest.dev/guide/) | [Testing Library](https://test
 
 ---
 
-_Next: Explore [Development](development.md) for testing patterns and contribution guidelines, or review [Browser Support](browser-support.md) for API compatibility requirements._
+## Related Documentation
+
+- **[← Back to README](../README.md)** - technology stack and development overview
+- **[Getting Started](getting-started.md)** - setup requirements and installation
+- **[Architecture](architecture.md)** - project structure and patterns
+- **[Development](development.md)** - development workflow, quality tools, and testing
+- **[Browser Support](browser-support.md)** - compatibility requirements
+
+---
+
+_Next: Explore [Development](development.md) for development workflow, quality tools, and testing, or review [Browser Support](browser-support.md) for API compatibility requirements._

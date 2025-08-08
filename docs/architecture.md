@@ -247,9 +247,9 @@ Learn more: [ESLint](https://eslint.org/docs/latest/) | [Prettier](https://prett
 - **[← Back to README](../README.md)** - technology stack overview
 - **[Getting Started](getting-started.md)** - setup and first steps
 - **[HTTP Services](http-services.md)** - api integration patterns
-- **[Development](development.md)** - testing and quality standards
+- **[Development](development.md)** - development workflow, quality tools, and testing
 - **[Browser Support](browser-support.md)** - compatibility requirements
 
 ---
 
-_Next: Learn about [HTTP Services](http-services.md) for API integration patterns, or explore [Development](development.md) for testing and contribution guidelines._
+_Next: Learn about [HTTP Services](http-services.md) for API integration patterns, or explore [Development](development.md) for development workflow, quality tools, and testing._

@@ -147,4 +147,4 @@ This configuration enables automatic CSS prefixing and JavaScript transpilation 
 - **[Getting Started](getting-started.md)** - setup requirements and installation
 - **[Architecture](architecture.md)** - project structure and patterns
 - **[HTTP Services](http-services.md)** - api compatibility considerations
-- **[Development](development.md)** - cross-browser testing approach
+- **[Development](development.md)** - development workflow, quality tools, and testing

@@ -94,7 +94,7 @@ open http://localhost:3000
 
 - **[Architecture](docs/architecture.md)** - project structure and patterns
 - **[HTTP Services](docs/http-services.md)** - api integration and caching
-- **[Development](docs/development.md)** - testing and contribution guidelines
+- **[Development](docs/development.md)** - development workflow, quality tools, and testing
 
 ### Reference
 
@@ -121,4 +121,4 @@ open http://localhost:3000
 
 ## Contributing
 
-Read our [development guide](docs/development.md) for setup, testing requirements, and contribution guidelines.
+Read our [development guide](docs/development.md) for setup and testing requirements.
