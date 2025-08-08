@@ -268,7 +268,7 @@ app/services/http/graphql/adapters/
 
 ---
 
-## 🧪 Testing Patterns ✅
+## Testing Patterns ✅
 
 ### Service Testing Strategy
 

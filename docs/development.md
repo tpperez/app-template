@@ -286,7 +286,7 @@ app/services/http/providers/react-query.test.tsx
 
 ---
 
-## 📊 Quality Metrics ✅
+## Quality Metrics ✅
 
 ### Coverage Configuration
 

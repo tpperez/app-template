@@ -12,7 +12,6 @@ Next.js application template with TypeScript, Tailwind CSS, and quality tools pr
 - [Documentation](#documentation)
 - [What's Included](#whats-included)
 - [Contributing](#contributing)
-- [License](#license)
 
 ---
 
