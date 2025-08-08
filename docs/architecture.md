@@ -179,7 +179,7 @@ TypeScript path mapping enables clean, maintainable imports:
 ```typescript
 // tsconfig.json paths configuration enables:
 import Button from '@/app/components/ui/button'
-import { restClient } from '@/app/services/http'
+import { restClient } from '@/app/services/http/rest'
 ```
 
 ### Import Patterns

@@ -4,7 +4,7 @@ import { headers } from 'next/headers'
 import type { Metadata } from 'next'
 
 import { LANGUAGE, SITE_NAME } from '@/app/constants/config'
-import { HttpProvider } from '@/app/services/http'
+import { HttpProvider } from '@/app/services/http/providers'
 import ILayout from '@/app/types/layout'
 
 import FooterContainer from './components/structure/footer'

@@ -56,7 +56,7 @@ The template includes a complete HTTP service layer with adapter pattern impleme
 
 ```bash
 # import location
-import { restClient } from '@/app/services/http'
+import { restClient } from '@/app/services/http/rest'
 
 # see implementation examples in:
 app/services/http/rest/rest.test.ts
@@ -74,7 +74,7 @@ app/services/http/rest/rest.test.ts
 
 ```bash
 # import location
-import { graphqlClient } from '@/app/services/http'
+import { graphqlClient } from '@/app/services/http/graphql'
 
 # see implementation examples in:
 app/services/http/graphql/graphql.test.ts
