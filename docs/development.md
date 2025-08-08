@@ -248,7 +248,7 @@ app/services/http/providers/react-query.test.tsx
 - **[← Back to README](../README.md)** - technology stack and development overview
 - **[Getting Started](getting-started.md)** - setup requirements and installation
 - **[Architecture](architecture.md)** - project structure and patterns
-- **[HTTP Services](http-services.md)** - api integration patterns
+- **[HTTP Service](service-http.md)** - complete HTTP service layer with REST, GraphQL, and performance optimization
 - **[Browser Support](browser-support.md)** - compatibility requirements
 
 ---

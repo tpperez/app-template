@@ -159,7 +159,7 @@ npm run dev
 ## Next Steps
 
 - **[Architecture](architecture.md)** - understand project patterns
-- **[HTTP Services](http-services.md)** - learn api integration
+- **[HTTP Service](service-http.md)** - complete HTTP service layer with REST, GraphQL, and performance optimization
 - **[Development](development.md)** - development workflow, quality tools, and testing
 
 ### External Resources
@@ -175,6 +175,6 @@ npm run dev
 
 - **[← Back to README](../README.md)** - overview and technology stack
 - **[Architecture](architecture.md)** - project structure and patterns
-- **[HTTP Services](http-services.md)** - api integration patterns
+- **[HTTP Service](service-http.md)** - complete HTTP service layer with REST, GraphQL, and performance optimization
 - **[Development](development.md)** - development workflow, quality tools, and testing
 - **[Browser Support](browser-support.md)** - compatibility requirements

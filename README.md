@@ -93,7 +93,7 @@ open http://localhost:3000
 ### Development
 
 - **[Architecture](docs/architecture.md)** - project structure and patterns
-- **[HTTP Services](docs/http-services.md)** - api integration and caching
+- **[HTTP Service](docs/service-http.md)** - complete HTTP service layer with REST, GraphQL, and performance optimization
 - **[Development](docs/development.md)** - development workflow, quality tools, and testing
 
 ### Reference

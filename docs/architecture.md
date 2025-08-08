@@ -246,10 +246,10 @@ Learn more: [ESLint](https://eslint.org/docs/latest/) | [Prettier](https://prett
 
 - **[← Back to README](../README.md)** - technology stack overview
 - **[Getting Started](getting-started.md)** - setup and first steps
-- **[HTTP Services](http-services.md)** - api integration patterns
+- **[HTTP Service](service-http.md)** - complete HTTP service layer with REST, GraphQL, and performance optimization
 - **[Development](development.md)** - development workflow, quality tools, and testing
 - **[Browser Support](browser-support.md)** - compatibility requirements
 
 ---
 
-_Next: Learn about [HTTP Services](http-services.md) for API integration patterns, or explore [Development](development.md) for development workflow, quality tools, and testing._
+_Next: Learn about [HTTP Service](service-http.md) for complete HTTP service layer with REST, GraphQL, and performance optimization, or explore [Development](development.md) for development workflow, quality tools, and testing._
