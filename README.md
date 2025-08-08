@@ -12,7 +12,6 @@ Next.js application template with TypeScript, Tailwind CSS, and quality tools pr
 - [Documentation](#documentation)
 - [What's Included](#whats-included)
 - [Contributing](#contributing)
-- [License](#license)
 
 ---
 
@@ -94,8 +93,8 @@ open http://localhost:3000
 ### Development
 
 - **[Architecture](docs/architecture.md)** - project structure and patterns
-- **[HTTP Services](docs/http-services.md)** - api integration and caching
-- **[Development](docs/development.md)** - testing and contribution guidelines
+- **[HTTP Service](docs/service-http.md)** - complete HTTP service layer with REST, GraphQL, and performance optimization
+- **[Development](docs/development.md)** - development workflow, quality tools, and testing
 
 ### Reference
 
@@ -122,10 +121,4 @@ open http://localhost:3000
 
 ## Contributing
 
-Read our [development guide](docs/development.md) for setup, testing requirements, and contribution guidelines.
-
----
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
+Read our [development guide](docs/development.md) for setup and testing requirements.

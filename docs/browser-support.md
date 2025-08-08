@@ -146,5 +146,5 @@ This configuration enables automatic CSS prefixing and JavaScript transpilation 
 - **[← Back to README](../README.md)** - technology stack and development overview
 - **[Getting Started](getting-started.md)** - setup requirements and installation
 - **[Architecture](architecture.md)** - project structure and patterns
-- **[HTTP Services](http-services.md)** - api compatibility considerations
-- **[Development](development.md)** - cross-browser testing approach
+- **[HTTP Service](service-http.md)** - complete HTTP service layer with REST, GraphQL, and performance optimization
+- **[Development](development.md)** - development workflow, quality tools, and testing
