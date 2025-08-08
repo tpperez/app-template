@@ -123,9 +123,3 @@ open http://localhost:3000
 ## Contributing
 
 Read our [development guide](docs/development.md) for setup, testing requirements, and contribution guidelines.
-
----
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
