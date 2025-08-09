@@ -132,14 +132,14 @@ Automated quality gates run before each commit:
 
 ### Common Issues
 
-**Node.js Version Mismatch**
+#### Node.js Version Mismatch
 
 ```bash
 nvm use
 node --version  # should match .nvmrc
 ```
 
-**Dependency Issues**
+#### Dependency Issues
 
 ```bash
 rm -rf node_modules package-lock.json
@@ -147,7 +147,7 @@ npm cache clean --force
 npm install
 ```
 
-**Development Server Issues**
+#### Development Server Issues
 
 ```bash
 rm -rf .next
